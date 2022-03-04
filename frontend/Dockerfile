@@ -1,0 +1,14 @@
+FROM node:16
+
+WORKDIR /frontend
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 80
+EXPOSE 443
+
+CMD [ "npm", "start" ]
