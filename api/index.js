@@ -1,17 +1,15 @@
 const express = require('express')
 const app = express()
+var os = require('os');
 // var cors = require('cors')
 const port = 80
 
 // app.use(cors())
-app.use(express.static('static'))
 
-app.get('/machines', (req, res) => {
-	
-})
-
-app.get('/billing', (req, res) => {
-	
+app.get('/stats/cpu', (req, res) => {
+    os.cpuUsage(v => {
+        res.send(`CPU Usage (%): ${v}`);
+    });
 })
 
 app.listen(port, () => {

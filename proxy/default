@@ -12,11 +12,11 @@ server {
 
         # frontend
         location / {
-                proxy_pass http://10.80.05.3/;
+                proxy_pass http://10.80.55.3/;
         }
 
         # api
         location /api {
-                proxy_pass http://10.80.05.4/;
+                proxy_pass http://10.80.55.4/;
         }
 }

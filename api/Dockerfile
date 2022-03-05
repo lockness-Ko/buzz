@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:17-bullseye
 
 WORKDIR /api
 
@@ -7,7 +7,5 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-
-EXPOSE 8005
 
 CMD [ "npm", "start" ]

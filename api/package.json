@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "The api for the buzz framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockness-Ko/buzz.git"
+  },
+  "author": "lockness Ko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lockness-Ko/buzz/issues"
+  },
+  "homepage": "https://github.com/lockness-Ko/buzz#readme",
+  "dependencies": {
+    "os-utils": "^0.0.14"
+  }
+}
