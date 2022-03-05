@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:17-bullseye
 
 WORKDIR /frontend
 
@@ -8,7 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8080
 
 CMD [ "npm", "start" ]

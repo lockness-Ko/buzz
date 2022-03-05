@@ -1,0 +1,19 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "The frontend for the buzz IaaS framework",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockness-Ko/buzz.git"
+  },
+  "author": "lockness Ko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lockness-Ko/buzz/issues"
+  },
+  "homepage": "https://github.com/lockness-Ko/buzz#readme"
+}
