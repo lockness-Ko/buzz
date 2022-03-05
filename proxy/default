@@ -1,0 +1,22 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /var/www/html;
+
+        index index.html;
+
+        server_name _;
+
+        error_page 404 /404.html;
+
+        # frontend
+        location / {
+                proxy_pass http://10.80.05.3/;
+        }
+
+        # api
+        location /api {
+                proxy_pass http://10.80.05.4/;
+        }
+}

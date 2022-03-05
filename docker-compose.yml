@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  proxy:
+    image: "buzz/proxy"
+    networks:
+      front:
+        ipv4_address: 10.80.05.2
+
+networks:
+  front:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.80.08.0/24
+        - gateway: 10.80.08.1
