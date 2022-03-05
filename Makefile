@@ -1,8 +1,16 @@
 all:
-	docker build -t buzz/api ./api
-	docker build -t buzz/frontend ./frontend
-	docker build -t buzz/buzz ./buzz
-	docker build -t buzz/proxy ./proxy
+	cd ./api
+		docker build -t buzz/api .
+	cd ..
+	cd ./frontend
+		docker build -t buzz/frontend .
+	cd ..
+	cd ./buzz
+		docker build -t buzz/buzz .
+	cd ..
+	cd ./proxy
+		docker build -t buzz/proxy .
+	cd ..
 
 up:
 	docker-compose up -d
