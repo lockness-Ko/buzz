@@ -3,9 +3,27 @@ version: "3"
 services:
   proxy:
     image: "buzz/proxy"
+    ports:
+      - 80:80
+      - 443:443
     networks:
       front:
         ipv4_address: 10.80.05.2
+  frontend:
+    image: "buzz/frontend"
+    networks:
+      front:
+        ipv4_address: 10.80.05.3
+  api:
+    image: "buzz/api"
+    networks:
+      front:
+        ipv4_address: 10.80.05.4
+  buzz:
+    image: "buzz/buzz"
+    networks:
+      front:
+        ipv4_address: 10.80.05.5
 
 networks:
   front:
@@ -13,5 +31,5 @@ networks:
     ipam:
       driver: default
       config:
-        - subnet: 10.80.08.0/24
-        - gateway: 10.80.08.1
+        - subnet: 10.80.05.0/24
+        - gateway: 10.80.05.1
