@@ -1,0 +1,23 @@
+{
+  "name": "buzz",
+  "version": "1.0.0",
+  "description": "The \"hypervisor\" for buzz",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockness-Ko/buzz.git"
+  },
+  "author": "lockness Ko",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/lockness-Ko/buzz/issues"
+  },
+  "homepage": "https://github.com/lockness-Ko/buzz#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "node-docker-api": "^1.1.22"
+  }
+}

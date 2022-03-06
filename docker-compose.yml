@@ -16,6 +16,7 @@ services:
         ipv4_address: 10.80.55.3
   api:
     build: "./api"
+    privileged: true
     networks:
       front:
         ipv4_address: 10.80.55.4

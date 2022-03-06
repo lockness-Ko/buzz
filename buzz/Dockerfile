@@ -1,5 +1,13 @@
-FROM docker:latest
+FROM docker:dind
 
-# RUN apk add --update nodejs nodejs-npm
+RUN apk add --update nodejs npm
 
-CMD ["/bin/bash", "/run.sh"]
+WORKDIR /buzz
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start"]
