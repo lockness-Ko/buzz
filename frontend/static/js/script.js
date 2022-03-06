@@ -9,21 +9,22 @@ let apiGet = (url, callback) => {
     }).then((y) => callback(y));
 }
 
+let roundUp = (num, precision) => {
+    precision = Math.pow(10, precision)
+    return Math.ceil(num * precision) / precision
+}
+
 let statsLoop = () => {
     apiGet("/api/stats/cpu", (text) => {
-        cpu.textContent = text;
+        cpu.textContent = `CPU: ${roundUp(parseFloat(text),2)}%`;
     })
 
     apiGet("/api/stats/mem", (text) => {
-        mem.textContent = text;
-    })
-    
-    apiGet("/api/stats/uptime", (text) => {
-        uptime.textContent = text;
+        mem.textContent = `${text}`;
     })
 
-    apiGet("/api/stats/load", (text) => {
-        load.textContent = text;
+    apiGet("/api/stats/uptime", (text) => {
+        uptime.textContent = `${text}`;
     })
 
     setTimeout(() => {

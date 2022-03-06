@@ -16,7 +16,7 @@ server {
         }
 
         # api
-        location /api {
+        location /api/ {
                 proxy_pass http://10.80.55.4/;
         }
 }

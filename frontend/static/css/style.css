@@ -6,7 +6,8 @@ body {
 
 ul {
     list-style-type: none;
-    margin: -8px;
+    margin-left: -8px;
+    margin-top: -8px;
     padding: 0;
     overflow: hidden;
 }
@@ -27,6 +28,11 @@ li a:hover {
     background-color: #111;
 }
 
-.content {
-    /* text-align: center; */
+.stats {
+    float: left;
+    display: block;
+    background-color: black;
+    width: 20%;
+    padding: 10px;
 }
+

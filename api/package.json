@@ -4,7 +4,7 @@
   "description": "The api for the buzz framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/lockness-Ko/buzz#readme",
   "dependencies": {
+    "express": "^4.17.3",
     "os-utils": "^0.0.14"
   }
 }
