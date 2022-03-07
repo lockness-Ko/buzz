@@ -9,7 +9,9 @@ Buzz is an IaaS framework that utilizes docker
 
 A poor mans IaaS as a Service (IaaSaaS, some may call it a hypervisor). You can use it to deploy containers like VPSs (and get people to pay you for it).
 
-It has EDoS and DDoS detection (iptables blacklists IPs which are abusive).
+It supports overprovisioning (you can edit these settings in the buzz/buzz.conf file)
+
+It has built in EDoS and DDoS detection (iptables blacklists IPs which are abusive).
 
 ## > Installation
 
