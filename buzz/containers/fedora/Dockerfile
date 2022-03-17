@@ -1,6 +1,6 @@
 FROM fedora:latest
 
-RUN dnf -y update && dnf -y install git python3 curl make automake gcc gcc-c++ kernel-devel libc-dev nodejs
+RUN dnf -y update && dnf -y install git python3 curl nodejs
 
 ADD ../webterm /opt/webterm
 
