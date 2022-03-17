@@ -22,6 +22,7 @@ services:
         ipv4_address: 10.80.55.4
   buzz:
     build: "./buzz"
+    privileged: true
     networks:
       front:
         ipv4_address: 10.80.55.5

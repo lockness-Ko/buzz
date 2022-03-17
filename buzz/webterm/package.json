@@ -1,7 +1,7 @@
 {
-  "name": "buzz",
+  "name": "webterm",
   "version": "1.0.0",
-  "description": "The \"hypervisor\" for buzz",
+  "description": "The webterm component of the docker containers",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/lockness-Ko/buzz#readme",
   "dependencies": {
-    "body-parser": "^1.19.2",
     "express": "^4.17.3"
   }
 }

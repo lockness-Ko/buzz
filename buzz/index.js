@@ -1,29 +1,39 @@
 'use strict';
 
 const express = require('express')
-const {
-    Docker
-} = require('node-docker-api');
+const { exec } = require('child_process');
+const bodyParser = require('body-parser')
 const app = express()
 const port = 80
 
-const docker = new Docker({
-    socketPath: '/var/run/docker.sock'
-});
+app.use(bodyParser.json())
+
+let rand = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min + 1;
+}
 
 app.post('/create', (req, res) => {
-    docker.container.create({
-        Image: 'ubuntu',
-        Cmd: ['/bin/ash', '-c', 'echo hi'],
-        name: 'test'
-    }).then(container => container.start()).then(container => container.logs({
-        follow: true,
-        stdout: true,
-        stderr: true
-    })).then(stream => {
-        stream.on('data', info => console.log(info))
-        stream.on('error', err => console.log(err))
-    })
+    if (req.body.type != "ubuntu" || req.body.type != "fedora") {
+        res.send("Stop hacking!");
+        return;
+    }
+
+    let tcpExposed = rand(30000, 60000);
+    let httpExposed = rand(30000, 60000);
+    
+    let type = "";
+
+    switch (req.body.type) {
+        case "ubuntu":
+            type = "ubuntu"
+            break;
+        case "fedora":
+            type = "fedora"
+            break;
+    }
+
+    exec(`docker run --rm -d -p ${httpExposed}:80 -p ${tcpExposed}:8055 buzz/${type}:latest`)
+    res.send(`Created instance at ${tcpExposed}/tcp ${httpExposed}/http`);
 })
 
 app.listen(port, () => {
